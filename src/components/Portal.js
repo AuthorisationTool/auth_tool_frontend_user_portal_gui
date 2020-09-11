@@ -1,11 +1,34 @@
 import React from 'react'
 
-export default function Dashboard() {
+export default function Portal() {
 
     const [step, setstep] = useState('ble_connect');
     const steps = ['ble_connect',
     'badge_evaluation','role_evaluation',
     'profile_evaluation','environment_evaluation'];
+    const values = [{
+        value: 'Gyro',
+        getArg: ''
+    },
+    {
+        value: 'Acceleration',
+        getArg: '',
+    },
+    {
+        value: 'bid',
+        getArg: ''
+    },
+    {
+        value: 'TimeOfRequest',
+        getArg: ''
+    },
+    {
+        value: 'AgentLocation',
+        getArg: ''
+    }
+
+
+];
     const [badgerequest, setbadgerequest] = useState({
         bid : ''
     });
@@ -15,15 +38,11 @@ export default function Dashboard() {
     })
     const [profilerequest, setprofilerequest] = useState({
         requestID: '',
-        valueList: {
-
-        } 
+        valueList: []
     })
     const [environmentrequest, setenvironmentrequest] = useState({
         requestID: '',
-        valueList: {
-
-        }
+        valueList: []
     })
     const [decision, setdecision] = useState({})
     
